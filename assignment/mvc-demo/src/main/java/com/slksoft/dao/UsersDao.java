@@ -22,7 +22,7 @@ public interface UsersDao {
 //	@Update("update users set phone = #{phone} ,city = #{city}, country= #{country} , state = #{state} where email= #{email} ")
 //	public void updateDetails(User user);
 
-	@Insert("insert into message(msg_from,msg_to,msg_cc,subject,body,send_at) values(#{msgFrom},#{msgTo},SPLIT_STRING(#{cc}, ' ', 1),#{subject},#{body},#{sendAt})")
+	@Insert("insert into message(msg_from,msg_to,msg_cc,subject,body,send_at) values(#{msgFrom},#{msgTo},#{cc},#{subject},#{body},#{sendAt})")
 	public void addNewMessage(Message msg);
 
 	@Select("select * from Message where msg_to=#{email} ")
